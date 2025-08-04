@@ -1,4 +1,4 @@
-#Before doing this please setup the database 
+# Before doing this please setup the database 
 
 # Backend - Grocery Management System
 
@@ -35,7 +35,7 @@ backend/
 │   └── init_db.py       # Initialize database
 └── requirements.txt     # Python dependencies
 ```
-##To run this you can directly run the server.py 
+## To run this you can directly run the server.py 
 ```
 cd backend
 python server.py
