@@ -1,6 +1,3 @@
-Got it! If you have an exported `.sql` file containing the schema and data for the **grocery\_store** database, the instructions for the user to create the database and import the tables through that file would be as follows:
-
----
 
 # **Grocery Store Database Setup**
 
