@@ -1,4 +1,10 @@
+'''
+This is for getting the orders_dao table datas
+'''
 def get_all_orders(connection):
+    '''
+    This is for getting data from table R of CRUD
+    '''
     cursor = connection.cursor()
     query = (
         "SELECT order_id, customer_name, total, datetime "
@@ -20,6 +26,9 @@ def get_all_orders(connection):
 
 
 def add_new_order(connection, order):
+    '''
+    This is for inserting data from web form to the table C of CRUD
+    '''
     cursor = connection.cursor()
 
     # Insert into orders table

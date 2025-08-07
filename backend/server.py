@@ -1,3 +1,6 @@
+'''
+This is the main flask app where all the backend server establish
+'''
 from flask import Flask, jsonify,request
 from flask_cors import CORS
 from connection import get_sql_connection
@@ -13,6 +16,10 @@ conn = get_sql_connection()
 
 @app.route('/products', methods=['GET'])
 def get_products():
+    '''
+    This is the Products_dao file were accessed for get / read the table
+    :return:
+    '''
     products = products_dao.get_all_product(conn)
     products = jsonify(products)
     return products
@@ -20,6 +27,10 @@ def get_products():
 
 @app.route('/products', methods=['POST'])
 def add_product():
+    '''
+    This is the Products_dao file were accessed to add products to the table
+    :return:
+    '''
     data = request.get_json()
     product_id = products_dao.insert_new_product(conn, data)
     return jsonify({'status': 'success', 'product_id': product_id})
@@ -27,6 +38,9 @@ def add_product():
 
 @app.route('/products/<int:product_id>', methods=['DELETE'])
 def delete_products(product_id):
+    '''
+    This is the Products_dao file were accessed to delete data
+    '''
     response = products_dao.delete_products(conn, product_id)
     response = jsonify(response)
     return response
@@ -39,7 +53,6 @@ def get_ucom():
 
 @app.route('/orders', methods=['GET'])
 def get_orders():
-    conn = get_sql_connection()
     orders = orders_dao.get_all_orders(conn)
     return jsonify(orders)
 

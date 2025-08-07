@@ -1,7 +1,11 @@
-from connection import get_sql_connection
-
+'''
+This function is for performing CRUD operation on Products Table
+'''
 
 def get_all_product(connection):
+    '''
+    This is for reading data from the table R of CRUD
+    '''
     cursor = connection.cursor()
 
     query = (
@@ -20,11 +24,13 @@ def get_all_product(connection):
                 'ucom_name': ucom_name
             }
         )
-
     return products
 
 
 def insert_new_product(connection, product):
+    '''
+    This is for inserting data from web form to the table C of CRUD
+    '''
     cursor = connection.cursor()
     query = ("INSERT INTO products "
              "(product_name, ucom_id, price_per_unit) "
@@ -39,6 +45,9 @@ def insert_new_product(connection, product):
 
 
 def delete_products(connection, product_id):
+    '''
+    This is for Deleting data from web form to the table D of CRUD
+    '''
     cursor = connection.cursor()
     try:
         query = "DELETE FROM products WHERE products_id = %s"
@@ -50,6 +59,3 @@ def delete_products(connection, product_id):
     finally:
         cursor.close()
     return result
-
-
-
