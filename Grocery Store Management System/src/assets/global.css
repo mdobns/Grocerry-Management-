@@ -1,12 +1,8 @@
-@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
 @import "flowbite-vue/index.css";
-
-
-@plugin "flowbite/plugin";
-
-
-@source "../node_modules/flowbite-vue";
 
 .table-default {
   width: 100%;
