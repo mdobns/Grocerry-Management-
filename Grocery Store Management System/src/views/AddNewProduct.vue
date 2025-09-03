@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="modal-overlay">
     <div class="modal">
       <h2>Add New Product</h2>
       <form @submit.prevent="submitProduct">
